@@ -1,104 +1,136 @@
-
-
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    text-transform: capitalize;
-    box-sizing: border-box;
-  }
-  html {
-    font-size: 10px;
-  }
-  
-  @media only screen and (max-width:400px) {
-    html {
-        font-size: 9.375px;
-    }
-  }
-  
-  
-  
-  body {
-    background: #19191b;
-    font-family: "metropolis-regular", sans-serif;
-    font-size: rem;
-    font-style: normal;
-    font-weight: normal;
-    color: #656565;
-  }
-  
-  /* Loader container */
-  .loader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    animation: fadeOut 4s forwards; /* Adjust timing as needed */
-    animation-delay: 10s; /* Duration for loader visibility */
-  }
-  
-  
-  
-  /* Loader container */
-  .loader{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+body{
+  background-color: #050505;
+}
+/* Loader Container */
+.loader-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  bottom: 0;
+  background: #050505;
+  z-index: 9999; /* Higher z-index to display above the header */
   height: 100%;
-  background-color: none;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  animation: fadeOut 4s forwards; /* Adjust timing as needed */
-  animation-delay: 10s; /* Duration for loader visibility */
+  animation: hide-loader 6s forwards; /* Fade out after 6 seconds */
+}
+
+/* Loading Line */
+.loading-line {
+  position: fixed;
+  top: 54px; /* Place below the header (adjust as needed) */
+  left: 0;
+  height: 4px;
+  width: 0;
+  background-color: #ffffff;
+  animation: loading-line-animation 4s forwards, fade-out 1s 6s forwards;
+  z-index: 998; /* Below header */
+}
+
+    /* Line Scale Loader */
+    .line-scale > div {
+      background-color: #fff;
+      width: 4px;
+      height: 35px;
+      border-radius: 2px;
+      margin: 2px;
+      animation: line-scale 1s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+      display: inline-block;
+    }
+
+    /* Animation Delay for Each Bar */
+    .line-scale > div:nth-child(1) {
+      animation-delay: -0.4s;
+    }
+
+    .line-scale > div:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+
+    .line-scale > div:nth-child(3) {
+      animation-delay: -0.2s;
+    }
+
+    .line-scale > div:nth-child(4) {
+      animation-delay: -0.1s;
+    }
+
+    .line-scale > div:nth-child(5) {
+      animation-delay: 0s;
+    }
+
+    /* Keyframes for Line Scale Animation */
+    @keyframes line-scale {
+      0% {
+        transform: scaley(1);
+      }
+      50% {
+        transform: scaley(0.4);
+      }
+      100% {
+        transform: scaley(1);
+      }
+    }
+
+/* Keyframes for Loading Line Animation */
+@keyframes loading-line-animation {
+  0% {
+    width: 0;
   }
-  
-  /* Loader animation */
-  .loader{
-  width: 50px;
-  height: 50px;
-  border: 5px solid #ccc;
-  border-top: 5px solid #4586D5;
-  border-radius: 50%;
-  animation: spin 3s linear infinite;
+  100% {
+    width: 100%;
   }
-  
-  /* Keyframes for spinning loader */
-  @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+}
+
+/* Keyframes to Fade Out the Loading Line */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
   }
-  
-  /* Keyframes for fade-in animation */
-  @keyframes fadeIn {
-  to { opacity: 1; }
+  100% {
+    opacity: 0;
   }
-  
-  /* Keyframes for fade-out animation */
-  @keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
+}
+
+/* Keyframes for Hiding Loader */
+@keyframes hide-loader {
+  0% {
+    opacity: 1;
+    visibility: visible;
   }
-  
-  
-  
-     /* header section */
-  header{  
-  display: block;
-  position:relative;
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Header */
+header {
+  display: flex;
+  position: fixed;
   top: 0;
+  width: 100%;
+  height: 50px; /* Header height matches loading line placement */
+  background-color: #333;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: #fff;
   z-index: 1000;
-  margin-bottom: 20px;
-  
-  }
+}
   
   
   .headerNav{
@@ -212,8 +244,56 @@
    .LinkList div:hover{
   background-color: black;
   color: white;
-   }
+}
   
             /* end header navigation  */
-  
-  
+   /* start navbar  */
+   /* section.Home {
+    width: 100%;
+    background-color: inherit;
+    height: fit-content;
+    margin:  0px; 
+    padding: 0;
+    position: relative;
+} */
+.Home-content .uprow {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 80px;
+  align-items: baseline;
+}
+
+.Home-content_logo {
+  display: inline;
+  padding: 0;
+  font-size: 30px;
+}
+
+.Home-content_logo a {
+  margin: 0 0 0 6px;
+  padding: 0;
+  outline: 0;
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.Home-content_social {
+  float: left;
+  margin-left: 20px;
+  list-style: none;
+  font-size: 23px;
+  line-height: 1;
+  padding: 0;
+}
+
+.Home-content_social li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.Home-content_social a {
+  color: #fff;
+}
