@@ -6,8 +6,16 @@
 }
 
 html {
+  /* scroll-behavior: smooth; */
   font-size: 10px;
 }
+
+@media (min-height: 800px) {
+  .back-to-top {
+    display: block;
+  }
+}
+
 body{
   background-color: #050505;
 }
@@ -296,4 +304,220 @@ header {
 
 .Home-content_social a {
   color: #fff;
+}
+.content {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  background-color: #ffff;
+}
+
+.popular-posts{
+  height: fit-content;
+  width: 60%;
+  
+  
+}
+.post{
+ float: left;
+ margin: auto;
+  margin:20px 30px;
+  width: 40%;
+  
+}
+.post img{
+  width: 100%;
+  
+ 
+}
+.post p{
+  font-size: 20px;
+  font-weight: bold;
+
+}
+.post small{
+  font-size: 15px;
+}
+.Posts-h2{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.popular-posts, .about-philosophy, .tags {
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.popular-posts h2, .about-philosophy h2, .tags h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+.about-philosophy{
+  float: left;
+  text-align: center;
+  width: 30%; 
+}
+.about-philosophy p{
+  font-size: 15px;
+}
+.about-philosophy_social{
+  margin-top: 20px;
+}
+
+.about-philosophy ul li{
+  list-style: none;
+  display: inline;
+  font-size: 20px;
+}
+.about-philosophy a{
+  color: black;
+}
+
+.tags{
+  background-color: none;
+
+  
+}
+.tags .tag-buttons {
+  width: calc(110%/2);
+  margin-left: 25%;
+ 
+  
+}
+
+.tags .tag-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tags .tag-buttons button:hover {
+  background-color: #555;
+  color: white;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+  text-decoration: none;
+}
+
+/* 
+/* ===================================================================
+ * # footer
+ *
+ * ------------------------------------------------------------------- */
+
+.footer {
+  background-color: #1a1a1c;
+  color: #fff;
+  padding: 40px 0px;
+  justify-content: center;
+  
+  
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: 150px;
+  padding-top: 100px;
+  
+}
+
+.footer .column {
+  flex: 1;
+  width: 100%;
+  
+}
+
+.footer h3 {
+  width: 150px;
+  border-bottom: 2px solid #555;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 21px;
+ 
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin: 5px 0;
+  font-size: 20px;
+}
+.footer ul li:hover {
+  cursor: pointer;
+}
+
+.footer p {
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+.footer .email-container {
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+  border-radius: 5px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.footer .email-container input[type="email"] {
+  border: none;
+  padding: 12px;
+  flex-grow: 1;
+  background-color: black
+}
+.footer .email-container .mail-icon {
+  padding: 9px;
+  background-color: black;
+}
+.footer .email-container i {
+  font-size: 20px;
+  color: white;
+  
+}
+.footer .email-container:focus-within .mail-icon {
+  display: none;
+}
+.footer .email-container button {
+  top: 0;
+  right: 0;
+  color: #FFFFFF;
+  background: #0054a5;
+  border-color: #0054a5;
+  padding: 11px;
+  border-radius: 0 5px 5px 0;
+}
+
+.footer .email-container button:hover {
+  cursor: pointer;
+}
+
+.footer .copyright {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 20px;
+  
+}
+.footer .copyright a{
+  color: #0054a5;
+  margin: 0px 10px;
 }
